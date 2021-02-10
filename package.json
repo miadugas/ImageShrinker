@@ -1,0 +1,17 @@
+{
+  "name": "imageshrinker",
+  "version": "1.0.0",
+  "description": "App to optimize images for websites",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "keywords": [
+    "Electron"
+  ],
+  "author": "Mia Dugas",
+  "license": "MIT",
+  "devDependencies": {
+    "electron": "^11.2.3"
+  }
+}
