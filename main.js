@@ -1,4 +1,4 @@
-const { app, BrowserWindow, Menu } = require('electron')
+const { app, BrowserWindow, Menu, globalShortcut } = require('electron')
 
 
 // Set enviroment
@@ -18,8 +18,8 @@ function createMainWindow() {
       height: 600,
       icon: `${__dirname}/assets/icons/Icon_256x256.png`,
       resizable: isDev ? true : false,
-    //   backgroundColor: 'white',
-    //   webPreferences: {
+      backgroundColor: 'white',
+    //  webPreferences: {
     //     nodeIntegration: true,
       })
 
@@ -31,6 +31,9 @@ function createMainWindow() {
     
        const mainMenu = Menu.buildFromTemplate(menu)
        Menu.setApplicationMenu(mainMenu)
+
+       globalShortcut.register('CmdOrCtrl+R', () => mainWindow.reload())
+       globalShortcut.register(isMac ? 'Command+Alt+I' : 'Ctrl+Chift+I', () => mainWindow.toggleDevTools())
     
       mainWindow.on('closed', () => (mainWindow = null))
     })
@@ -42,6 +45,7 @@ const menu = [
     submenu: [
       {
         label: 'Quit',
+        accelerator: 'CmdOrCtrl+W',
         click: () => app.quit(),
       },
     ],
