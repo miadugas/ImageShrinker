@@ -1,5 +1,14 @@
 const { app, BrowserWindow } = require('electron')
 
+
+// Set enviroment
+process.env.NODE_ENV = 'development'
+
+//Check to see enivro
+const isDev = process.env.NODE_ENV !== 'production' ? true : false
+// Mac check
+const isMac = process.platform === 'darwin' ? true : false
+
 let mainWindow
 
 function createMainWindow() {
@@ -8,7 +17,7 @@ function createMainWindow() {
       width: 500,
       height: 600,
       icon: `${__dirname}/assets/icons/Icon_256x256.png`,
-    //   resizable: isDev ? true : false,
+      resizable: isDev ? true : false,
     //   backgroundColor: 'white',
     //   webPreferences: {
     //     nodeIntegration: true,
@@ -19,3 +28,24 @@ function createMainWindow() {
 
     app.on('ready', createMainWindow)
 
+
+
+
+
+
+
+    
+
+    app.on('window-all-closed', () => {
+      if (!isMac) {
+        app.quit()
+      }
+    })
+    
+    app.on('activate', () => {
+      if (BrowserWindow.getAllWindows().length === 0) {
+        createMainWindow()
+      }
+    })
+
+    app.allowRendererProcessReuse = true
