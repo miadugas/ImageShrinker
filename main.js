@@ -51,13 +51,13 @@ function createMainWindow() {
       aboutWindow.loadFile('./app/about.html')
     }
 
-
     app.on('ready', () => {
       createMainWindow()
     
        const mainMenu = Menu.buildFromTemplate(menu)
        Menu.setApplicationMenu(mainMenu) 
-      mainWindow.on('closed', () => (mainWindow = null))
+      
+       mainWindow.on('ready', () => (mainWindow = null))
     })
 
 const menu = [
@@ -87,10 +87,6 @@ const menu = [
         },
       ]
     : []),
-
-  {
-    role: 'fileMenu',
-  },
   ...(isDev ? [
       {
         label: 'Developer',
@@ -113,6 +109,7 @@ ipcMain.on('image:minimize', (e, options) => {
 async function shrinkImage({ imgPath, quality, dest }) {
    try {
      const pngQuality = quality / 100
+     
      const files = await imagemin([slash(imgPath)], {
        destination: dest,
        plugins: [
