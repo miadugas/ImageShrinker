@@ -18,8 +18,8 @@ Materialize, Font Awesome
 
 <hr>
 
-Final App download for Mac:
-[ZipFile](https://drive.google.com/file/d/1W6VKhybXYeOoGWOHXsdQjZ_OwjRXyEe2/view?usp=sharing)
+### Final App download for Mac:
+[Download](https://drive.google.com/file/d/1W6VKhybXYeOoGWOHXsdQjZ_OwjRXyEe2/view?usp=sharing)
 
 
 
