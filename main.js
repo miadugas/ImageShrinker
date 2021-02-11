@@ -15,14 +15,19 @@ let aboutWindow
 function createMainWindow() {
     mainWindow = new BrowserWindow({
       title: 'ImageShrinker',
-      width: 500,
+      width: isDev ? 800 : 500,
       height: 600,
       icon: `${__dirname}/assets/icons/Icon_256x256.png`,
       resizable: isDev ? true : false,
       backgroundColor: 'white',
-    //  webPreferences: {
-    //     nodeIntegration: true,
-      })
+      webPreferences: {
+         nodeIntegration: true,
+      },
+    })
+
+    if (isDev) {
+      mainWindow.webContents.openDevTools()
+    }
 
       mainWindow.loadFile('./app/index.html')
     }
@@ -76,7 +81,7 @@ const menu = [
         },
       ]
     : []),
-    
+
   {
     role: 'fileMenu',
   },
