@@ -1,5 +1,6 @@
 # ImageShrinker
 
+<hr>
 
 ## Description 
 
@@ -21,7 +22,7 @@ Materialize, Font Awesome
 ### Final App download for Mac:
 [Download](https://drive.google.com/file/d/1QR3QbjBhhCrQcvP9WFdUekPEsa31Rv7R/view?usp=sharing)
 
-
+<hr>
 ## License
 
 MIT License
