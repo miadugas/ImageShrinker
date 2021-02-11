@@ -16,9 +16,10 @@ Electron, JavaScript, NodeJs
 ### Additional Styling Framework
 Materialize, Font Awesome
 
-Final App download for Mac
+<hr>
 
-
+Final App download for Mac:
+[ZipFile](https://drive.google.com/file/d/1W6VKhybXYeOoGWOHXsdQjZ_OwjRXyEe2/view?usp=sharing)
 
 
 
