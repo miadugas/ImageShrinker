@@ -4,7 +4,7 @@
 
 ## Description 
 
-A desktop app built on Electron to optimize images for websites without loosing quality. 
+A desktop app built on Electron to optimize images for websites without losing quality. 
 
 
 ![Main View](https://github.com/miadugas/ImageShrinker/blob/main/assets/imageShrinker.png)
